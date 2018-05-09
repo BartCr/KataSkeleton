@@ -1,6 +1,7 @@
 package com.cegeka.kata.warehouse.util;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 import java.util.Objects;
 
@@ -11,7 +12,7 @@ public class EuroValue implements Comparable<EuroValue> {
     private final BigDecimal internal;
 
     public static EuroValue of(double value) {
-        return new EuroValue(new BigDecimal(value));
+        return new EuroValue(BigDecimal.valueOf(value));
     }
 
     public static EuroValue of(String value) {
@@ -62,4 +63,7 @@ public class EuroValue implements Comparable<EuroValue> {
         return new EuroValue(this.internal.add(other.internal));
     }
 
+    public EuroValue multiply(double amount) {
+        return new EuroValue(this.internal.multiply(BigDecimal.valueOf(amount)).setScale(2, RoundingMode.UP));
+    }
 }

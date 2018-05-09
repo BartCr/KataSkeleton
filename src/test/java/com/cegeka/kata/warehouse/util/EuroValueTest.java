@@ -40,4 +40,15 @@ public class EuroValueTest {
         assertThat(one.add(one)).isEqualTo(two);
         assertThat(one.add(two)).isEqualTo(EuroValue.of("3.00"));
     }
+
+    @Test
+    public void test_multiply() {
+        EuroValue one = EuroValue.of("1.00");
+        EuroValue two = EuroValue.of("2.00");
+
+        assertThat(one.multiply(2)).isEqualTo(two);
+        assertThat(one.multiply(1)).isEqualTo(one);
+
+        assertThat(one.multiply(0.333)).isEqualTo(EuroValue.of("0.34"));
+    }
 }

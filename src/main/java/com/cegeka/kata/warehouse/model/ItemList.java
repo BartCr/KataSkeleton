@@ -1,5 +1,6 @@
 package com.cegeka.kata.warehouse.model;
 
+import com.cegeka.kata.warehouse.model.item.Item;
 import com.cegeka.kata.warehouse.util.EuroValue;
 
 import java.util.ArrayList;

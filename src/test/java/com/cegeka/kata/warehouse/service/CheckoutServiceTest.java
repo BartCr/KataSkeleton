@@ -1,6 +1,6 @@
 package com.cegeka.kata.warehouse.service;
 
-import com.cegeka.kata.warehouse.model.Item;
+import com.cegeka.kata.warehouse.model.item.Item;
 import com.cegeka.kata.warehouse.model.ItemList;
 import com.cegeka.kata.warehouse.util.EuroValue;
 import org.junit.Test;
